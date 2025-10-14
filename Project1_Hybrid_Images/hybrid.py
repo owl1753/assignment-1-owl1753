@@ -19,8 +19,8 @@ def gaussian_blur_kernel_2d(sigma, height, width):
         가우시안 블러가 적용된 결과가 나옵니다.
     '''
 
-    x_points = np.arange(-(width // 2), width // + 1)
-    y_points = np.arange(-(height // 2), height // + 1)
+    x_points = np.arange(-(width // 2), width // 2 + 1)
+    y_points = np.arange(-(height // 2), height // 2 + 1)
     y, x = np.meshgrid(y_points, x_points)
     normal = 1 / (2 * np.pi * sigma**2)
     kernel = np.exp(-(x**2 + y**2) / (2.0 * sigma**2)) * normal
